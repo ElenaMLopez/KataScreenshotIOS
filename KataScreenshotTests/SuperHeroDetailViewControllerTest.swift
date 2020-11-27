@@ -20,14 +20,19 @@ class SuperHeroDetailViewControllerTest: ScreenshotTest {
         verify(viewController: viewController)
     }
     
+    func testShowAAvengerSuperHeroDetail() {
+        let superHeroAvenger = givenASuperHero(isAvenger: true)
+        
+        let viewController = getSuperHeroDetailViewController(superHeroAvenger.name)
+        
+        verify(viewController: viewController)
+    }
     
-    // Funcion para tener un superHero
     fileprivate func givenASuperHero(isAvenger: Bool) -> SuperHero {
         let superHero = SuperHeroMother.givenASuperHero(isAvenger: isAvenger)
         return superHero
     }
     
-    // Instanciar el controlador
     fileprivate func getSuperHeroDetailViewController(_ superHeroName: String) -> UIViewController {
         let superHeroDetailViewController = ServiceLocator()
             .provideSuperHeroDetailViewController(superHeroName) as! SuperHeroDetailViewController
