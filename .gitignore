@@ -66,3 +66,7 @@ fastlane/test_output
 
 # Screenshot tests
 FailureDiffs
+
+# MacOs
+
+.DS_Store/
